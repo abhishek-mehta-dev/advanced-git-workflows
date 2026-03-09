@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Reflog Guide</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f6f8fa;
+        }
+
+        h1 {
+            color: #24292e;
+        }
+
+        h2 {
+            color: #0366d6;
+        }
+
+        code {
+            background: #eee;
+            padding: 4px 6px;
+            border-radius: 4px;
+        }
+
+        .box {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+
+        <h1>Git Reflog</h1>
+
+        <p>
+            <strong>Git reflog</strong> is a command used to track updates made to the tip of branches.
+            It records when the <code>HEAD</code> changes in a Git repository.
+        </p>
+
+        <h2>Why Use Git Reflog?</h2>
+
+        <ul>
+            <li>Recover lost commits</li>
+            <li>Undo a hard reset</li>
+            <li>Find previous branch states</li>
+        </ul>
+
+        <h2>Basic Command</h2>
+
+        <p>Run the following command to see the reflog history:</p>
+
+        <pre>
+git reflog
+</pre>
+
+        <h2>Example Output</h2>
+
+        <pre>
+a1b2c3d HEAD@{0}: commit: Added login feature
+e4f5g6h HEAD@{1}: commit: Updated README
+i7j8k9l HEAD@{2}: checkout: moving from main to feature-branch
+</pre>
+
+        <h2>Recover a Lost Commit</h2>
+
+        <p>You can restore a previous state using:</p>
+
+        <pre>
+git reset --hard HEAD@{1}
+</pre>
+
+        <p>This resets your repository to the state recorded in the reflog.</p>
+
+    </div>
+
+</body>
+
+</html>
